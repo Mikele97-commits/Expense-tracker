@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class AddExpense {
     public static void add() {
         Scanner input = new Scanner(System.in);
-
+        String answer = "N";
         System.out.println("What is the amount of your expense?");
         double amount = input.nextDouble();
         System.out.println("What is the category of your expense?\nPossible options: Groceries, Monthly, Entertainment, Investment");
@@ -31,16 +31,17 @@ public class AddExpense {
         ExpenseList list = new ExpenseList();
         list.addExpense(amount, description, category, year, month, day);
         System.out.println("You have successfully added your expense. Do you want to add another? Y/N");
-        String answer = input.next();
-        do {
+        answer = input.next();
+        while (!(answer.equals("Y"))&& !(answer.equals("N"))) {
+            System.out.println("Please enter a valid answer");
+            answer = input.next();
+        }
 
-            if (answer.equals("Y")) {
-                AddExpense.add();
-            }
-            if (answer.equals("N")) {
-                Main.main(null);
-            }
-          answer = input.next();
-        }while (!(answer.equals("Y")&& !(answer.equals("N"))));
+        if (answer.equals("Y"))
+            AddExpense.add();
+        if (answer.equals("N"))
+            Intro.intro();
+
+
     }
 }
