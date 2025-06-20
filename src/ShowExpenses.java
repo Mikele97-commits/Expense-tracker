@@ -14,9 +14,19 @@ public class ShowExpenses {
                 System.out.println("How do you want to sort expenses?\n1.By amount\n2.By category\n3.By date");
                 choice = in.nextInt();
                 switch (choice) {
+                    case 1:
+                        Sort.amount();
+                        System.out.println("Expenses has been sorted by amount");
+                        Intro.intro();
+                        break;
                     case 2:
                         Sort.category();
                         System.out.println("Expenses has been sorted by category");
+                        Intro.intro();
+                        break;
+                    case 3:
+                        Sort.date();
+                        System.out.println("Expenses has been sorted by date");
                         Intro.intro();
                         break;
                 }
