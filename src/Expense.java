@@ -38,4 +38,32 @@ public class Expense {
     public int getDay() {
         return day;
     }
+
+    public String getDate(){
+        return getYear()+"/"+getMonth()+"/"+getDay();
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
 }

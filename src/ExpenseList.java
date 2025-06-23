@@ -32,11 +32,38 @@ public class ExpenseList {
         return expenses.get(i).getDay();
     }
 
+    public String getDate(int i){
+        return getYear(i)+"/"+getMonth(i)+"/"+getDay(i);
+    }
+
     public void displayExpenses(int i){
         System.out.println("Amount: " + expenses.get(i).getAmount()+ "\nCategory: " + expenses.get(i).getCategory()+"\nDescription:" + expenses.get(i).getDescription()+"\nDate: " +expenses.get(i).getYear()+"-"+expenses.get(i).getMonth()+"-"+expenses.get(i).getDay());
     }
 
     public int listSize(){
        return expenses.size();
+    }
+
+    public void setAmount(int i, double amount){
+        expenses.get(i).setAmount(amount);
+    }
+    public void setDescription(int i, String description){
+        expenses.get(i).setDescription(description);
+    }
+
+    public void setCategory(int i, String category){
+        expenses.get(i).setCategory(category);
+    }
+    public void setYear(int i, int year){
+        expenses.get(i).setYear(year);
+    }
+    public void setMonth(int i, int month){
+        expenses.get(i).setMonth(month);
+    }
+    public void setDay(int i, int day){
+        expenses.get(i).setDay(day);
+    }
+    public void deleteExpense(int index){
+        expenses.remove(index);
     }
 }
