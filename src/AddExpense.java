@@ -41,7 +41,5 @@ public class AddExpense {
             AddExpense.add();
         if (answer.equals("N"))
             Intro.intro();
-
-
     }
 }
